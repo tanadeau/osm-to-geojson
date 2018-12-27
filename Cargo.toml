@@ -1,0 +1,17 @@
+[package]
+name = "osm-to-geojson"
+version = "0.1.0"
+authors = ["Trent Nadeau <tanadeau@gmail.com>"]
+edition = "2018"
+description = "OSM PBF Filtering and GeoJSON converter"
+repository = "https://github.com/tanadeau/osm-to-geojson"
+readme = "./README.md"
+keywords = ["osm", "pbf", "openstreetmap", "geojson", "filter"]
+categories = ["command-line-utilities", "encoding", "science"]
+license = "BSD-3-Clause"
+
+[dependencies]
+osmpbfreader = "0.12.0"
+geojson = "0.13.0"
+serde_json = "1.0.33"
+structopt = "0.2.14"
