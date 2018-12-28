@@ -1,4 +1,4 @@
-# osm-to-geojson
+# osm-to-geojson [![Build Status](https://travis-ci.com/tanadeau/osm-to-geojson.svg?branch=master)](https://travis-ci.com/tanadeau/osm-to-geojson)
 A CLI application that filters OSM PBF data files based on tags and then converts them to GeoJSON features in an NDJSON format.
 
 # Installation

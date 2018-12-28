@@ -10,6 +10,9 @@ keywords = ["osm", "pbf", "openstreetmap", "geojson", "filter"]
 categories = ["command-line-utilities", "encoding", "science"]
 license = "BSD-3-Clause"
 
+[badges]
+travis-ci = { repository = "tanadeau/osm-to-geojson" }
+
 [dependencies]
 osmpbfreader = "0.12.0"
 geojson = "0.13.0"
