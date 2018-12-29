@@ -1,4 +1,6 @@
 language: rust
+services:
+  - docker
 cache: cargo
 rust:
   - stable
@@ -8,3 +10,15 @@ matrix:
   allow_failures:
     - rust: nightly
   fast_finish: true
+deploy:
+  - provider: cargo
+    token:
+      secure: "NHV1HPJ2pu4NiNhUQpZ7uB4LUxzpz1SKGQdUCOupH/zg4ZhvWEWmtWK+z/DaLr45XvR0xpTr4vC9F6JD+ZzQP+ggBVRGO8OIE+WLBccNQVa6q0Blj+Cwhy9g/mh72/M0Xkb7ewGMZjT+tcfCKMA6t5KCXRZK4s5s+0r5m+iOUuQpWy5P7rTv/2xa/doAsrS+sMLHRJCTgZH5uXDMJmCKx9wYcYJn6BarOBwTvu7rSVTk4PPmfh+OCwdVbViWhSgzLbzpMGRtjycrBuJm+GMXwDIoQGPgildznEON7kHTg7JPY3cbtwtw36KukDAOfcCBigPvzUCMtisYzIpW9xv/6QOSns346rozI4NVHETdHpYKNuwoNuaLt/qzIuJB2dykIkstZGeDVqfrBleHCyxxHYM6mqP8cJUZJ5+NjXL9kcIRxWZ375vcGSha67O0NcdTOmk/Ozv6jyASIugBWyPAb95HIPo7uKLusBd7MnAJZWfey50IFOc7NfZv0JsPFen0hb/+B+hgpzHpPBZ5PvRrFZEDdMf4HovO/uk4ctshD4mo8Wt+Df28bfsJi6PUupS10WBAYvwk9SVp8wQtby6JZm1GnR4lffl2fllMaqykonLgzjDaxLYtnMQUOnJeDHpwtd5KGIhAE3+G9ZE937QvuaTsW8N+RkIqZ0yimUryU74="
+    on:
+      rust: stable
+      tags: true
+  - provider: script
+    script: bash publish-docker.sh
+    on:
+      rust: stable
+      tags: true
